@@ -19,13 +19,14 @@ import pyfiglet
 
 # set CONSTANT vars
 CLIENT_NAME = 'YOUR_CLIENTS_NAME'
+meeting_type = 'CAB'
 CLIENT_NAME = CLIENT_NAME.upper()
 COUNTDOWN_SECONDS = 10
 INTERVAL = 10
 RUNTIME_IN_MINUTES = 60
 
 def create_screenshots_folder(client_name):
-    top_folder_path = '/Users/sudz4/Desktop/PROJECTZ/screen_shot_program_logs'
+    top_folder_path = '/Users/sudz4/Desktop/SUDZ4DEV/headless-screen-capture-utility'
     if not os.path.exists(top_folder_path):
         os.makedirs(top_folder_path)
 
@@ -35,18 +36,7 @@ def create_screenshots_folder(client_name):
     if not os.path.exists(subfolder_path):
         os.makedirs(subfolder_path)
 
-    current_date = datetime.now().strftime('%Y%m%d')
-    essential_library_name = f"{current_date}_ESSENTIAL_TECHNICAL_LIBRARY"
-    essential_library_path = os.path.join(subfolder_path, essential_library_name)
-    if not os.path.exists(essential_library_path):
-        os.makedirs(essential_library_path)
-
-    client_folder_name = f"{current_date}_{client_name}"
-    client_folder_path = os.path.join(subfolder_path, client_folder_name)
-    if not os.path.exists(client_folder_path):
-        os.makedirs(client_folder_path)
-
-    return client_folder_path
+    return subfolder_path
 
 def interval_countdown(interval):
     for i in range(interval, 0, -1):
@@ -63,7 +53,7 @@ def interval_countdown(interval):
 def take_screenshot(folder_path, client_name):
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     client_name = CLIENT_NAME
-    screenshot_file = os.path.join(folder_path, f"{timestamp}_{client_name}.png")
+    screenshot_file = os.path.join(folder_path, f"{timestamp}_{client_name}_{meeting_type}.png")
     subprocess.run(["screencapture", "-x", screenshot_file])
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"{client_name} screen capture SAVED AS {screenshot_file} @ {current_time}")
