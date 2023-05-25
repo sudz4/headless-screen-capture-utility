@@ -50,7 +50,13 @@ def create_screenshots_folder(client_name):
     if not os.path.exists(subfolder_path):
         os.makedirs(subfolder_path)
 
-    return subfolder_path
+    current_date = datetime.now().strftime('%Y%m%d')
+    client_folder_name = f"{current_date}_{client_name}"
+    client_folder_path = os.path.join(subfolder_path, client_folder_name)
+    if not os.path.exists(client_folder_path):
+        os.makedirs(client_folder_path)
+
+    return client_folder_path
 
 def interval_countdown(interval):
     for i in range(interval, 0, -1):
