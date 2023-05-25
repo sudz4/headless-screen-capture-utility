@@ -17,12 +17,26 @@ from datetime import datetime
 import threading
 import pyfiglet
 
+"""   
+There are four (4) places below that require user input:
+
+1- CLIENT_NAME
+2- meeting_type
+3- INTERVAL
+4- RUNTIME_IN_MINUTES
+
+Above variables are our constant vars.
+"""
+
 # set CONSTANT vars
-CLIENT_NAME = 'YOUR_CLIENTS_NAME'
-meeting_type = 'CAB'
+CLIENT_NAME = 'ClientName'# input the clients name or topic, i.e, ACME Solutions
+meeting_type = 'CAB' # input the meeting type, i.e., CAB (Change Advisory Board)
+# the idea is so that later the output saves as date_timestamp_ACME Solutions_CAB.png
 CLIENT_NAME = CLIENT_NAME.upper()
-COUNTDOWN_SECONDS = 10
+
+# set screenshot (screen capture) interval here - IMPORTANT! -
 INTERVAL = 10
+COUNTDOWN_SECONDS = INTERVAL # is the same as the screen capture interval (just logically seprated for cleaner code later)
 RUNTIME_IN_MINUTES = 60
 
 def create_screenshots_folder(client_name):
