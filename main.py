@@ -11,10 +11,7 @@ def ascii_art_signature():
 import os
 import time
 import subprocess
-import sys
-import platform
 from datetime import datetime
-import threading
 import pyfiglet
 
 """   
@@ -40,7 +37,7 @@ COUNTDOWN_SECONDS = INTERVAL # is the same as the screen capture interval (just 
 RUNTIME_IN_MINUTES = 60
 
 def create_screenshots_folder(client_name):
-    top_folder_path = '/Users/sudz4/Desktop/SUDZ4DEV/headless-screen-capture-utility'
+    top_folder_path = '/Users/sudz4/Desktop/SLED-DOGZ/headless-screen-capture-utility'
     if not os.path.exists(top_folder_path):
         os.makedirs(top_folder_path)
 
@@ -50,8 +47,9 @@ def create_screenshots_folder(client_name):
     if not os.path.exists(subfolder_path):
         os.makedirs(subfolder_path)
 
-    current_date = datetime.now().strftime('%Y%m%d')
-    client_folder_name = f"{current_date}_{client_name}"
+    # current_date = datetime.now().strftime('%Y%m%d')
+    # client_folder_name = f"{current_date}_{client_name}"
+    client_folder_name = f"{client_name}" # modified this to just have the client name. date provides good data but makes the file name confusing.
     client_folder_path = os.path.join(subfolder_path, client_folder_name)
     if not os.path.exists(client_folder_path):
         os.makedirs(client_folder_path)
