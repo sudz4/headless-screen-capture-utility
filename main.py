@@ -29,13 +29,13 @@ Above variables are our constant vars.
 """
 
 # set CONSTANT vars
-CLIENT_NAME = 'ClientName'# input the clients name or topic, i.e, ACME Solutions
-meeting_type = 'CAB' # input the meeting type, i.e., CAB (Change Advisory Board)
+CLIENT_NAME = 'inovalon'# input the clients name or topic, i.e, ACME Solutions
+meeting_type = 'specs_login_page' # input the meeting type, i.e., CAB (Change Advisory Board)
 # the idea is so that later the output saves as date_timestamp_ACME Solutions_CAB.png
 CLIENT_NAME = CLIENT_NAME.upper()
 
 # set screenshot (screen capture) interval here - IMPORTANT! -
-INTERVAL = 10
+INTERVAL = 5 # in seconds
 COUNTDOWN_SECONDS = INTERVAL # is the same as the screen capture interval (just logically seprated for cleaner code later)
 RUNTIME_IN_MINUTES = 60
 
