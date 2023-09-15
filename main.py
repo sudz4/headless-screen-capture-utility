@@ -14,26 +14,14 @@ import subprocess
 from datetime import datetime
 import pyfiglet
 
-"""   
-There are four (4) places below that require user input:
-
-1- CLIENT_NAME
-2- meeting_type
-3- INTERVAL
-4- RUNTIME_IN_MINUTES
-
-Above variables are our constant vars.
-"""
-
-# set CONSTANT vars
-CLIENT_NAME = 'inovalon'# input the clients name or topic, i.e, ACME Solutions
-meeting_type = 'specs_login_page' # input the meeting type, i.e., CAB (Change Advisory Board)
-# the idea is so that later the output saves as date_timestamp_ACME Solutions_CAB.png
+# Set CONSTANT vars
+CLIENT_NAME = 'inovalon'  # input the clients name or topic, i.e, ACME Solutions
+meeting_type = 'specs_login_page'  # input the meeting type, i.e., CAB (Change Advisory Board)
 CLIENT_NAME = CLIENT_NAME.upper()
 
-# set screenshot (screen capture) interval here - IMPORTANT! -
-INTERVAL = 5 # in seconds
-COUNTDOWN_SECONDS = INTERVAL # is the same as the screen capture interval (just logically seprated for cleaner code later)
+# Set screenshot (screen capture) interval here - IMPORTANT! -
+INTERVAL = 5  # in seconds
+COUNTDOWN_SECONDS = INTERVAL
 RUNTIME_IN_MINUTES = 60
 
 def create_screenshots_folder(client_name):
@@ -41,16 +29,7 @@ def create_screenshots_folder(client_name):
     if not os.path.exists(top_folder_path):
         os.makedirs(top_folder_path)
 
-    current_date_v = datetime.now().strftime('%Y%m%d_%a')
-    subfolder_name = f"{current_date_v}"
-    subfolder_path = os.path.join(top_folder_path, subfolder_name)
-    if not os.path.exists(subfolder_path):
-        os.makedirs(subfolder_path)
-
-    # current_date = datetime.now().strftime('%Y%m%d')
-    # client_folder_name = f"{current_date}_{client_name}"
-    client_folder_name = f"{client_name}" # modified this to just have the client name. date provides good data but makes the file name confusing.
-    client_folder_path = os.path.join(subfolder_path, client_folder_name)
+    client_folder_path = os.path.join(top_folder_path, client_name)
     if not os.path.exists(client_folder_path):
         os.makedirs(client_folder_path)
 
@@ -70,7 +49,6 @@ def interval_countdown(interval):
 
 def take_screenshot(folder_path, client_name):
     timestamp = time.strftime("%Y%m%d-%H%M%S")
-    client_name = CLIENT_NAME
     screenshot_file = os.path.join(folder_path, f"{timestamp}_{client_name}_{meeting_type}.png")
     subprocess.run(["screencapture", "-x", screenshot_file])
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -98,5 +76,3 @@ if __name__ == "__main__":
         print("Thanks for using sCrEeN cApTuRe!")
         ascii_art_signature()
         print()
-
-"""END OF PROGRAM"""
