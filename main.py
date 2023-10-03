@@ -15,8 +15,8 @@ from datetime import datetime
 import pyfiglet
 
 # Set CONSTANT vars
-CLIENT_NAME = 'inovalon'  # input the clients name or topic, i.e, ACME Solutions
-meeting_type = 'specs_login_page'  # input the meeting type, i.e., CAB (Change Advisory Board)
+CLIENT_NAME = 'em_from_dev'  # input the clients name or topic, i.e, ACME Solutions
+meeting_type = 'push'  # input the meeting type, i.e., CAB (Change Advisory Board)
 CLIENT_NAME = CLIENT_NAME.upper()
 
 # Set screenshot (screen capture) interval here - IMPORTANT! -
