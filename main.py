@@ -25,7 +25,7 @@ COUNTDOWN_SECONDS = INTERVAL
 RUNTIME_IN_MINUTES = 60
 
 def create_screenshots_folder(client_name):
-    top_folder_path = '/Users/sudz4/Desktop/SLED-DOGZ/headless-screen-capture-utility'
+    top_folder_path = '/Users/sudz4/Desktop/sidewayzSnowDEV/headless-screen-capture-utility'
     if not os.path.exists(top_folder_path):
         os.makedirs(top_folder_path)
 
