@@ -1,4 +1,5 @@
 # venv
 hscu_venv/
 
-# output screenshots, i don't want to push them to github
+# DON'T push your screenshot output(s) to github
+INOVALON/

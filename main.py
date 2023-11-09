@@ -15,14 +15,14 @@ from datetime import datetime
 import pyfiglet
 
 # Set CONSTANT vars
-CLIENT_NAME = 'em_from_dev'  # input the clients name or topic, i.e, ACME Solutions
-meeting_type = 'push'  # input the meeting type, i.e., CAB (Change Advisory Board)
+CLIENT_NAME = 'inovalon'  # input the clients name or topic, i.e, ACME Solutions
+meeting_type = 'Multi-SSO'  # input the meeting type, i.e., CAB (Change Advisory Board)
 CLIENT_NAME = CLIENT_NAME.upper()
 
 # Set screenshot (screen capture) interval here - IMPORTANT! -
 INTERVAL = 5  # in seconds
 COUNTDOWN_SECONDS = INTERVAL
-RUNTIME_IN_MINUTES = 60
+RUNTIME_IN_MINUTES = 90  # in minutes
 
 def create_screenshots_folder(client_name):
     top_folder_path = '/Users/sudz4/Desktop/sidewayzSnowDEV/headless-screen-capture-utility'
